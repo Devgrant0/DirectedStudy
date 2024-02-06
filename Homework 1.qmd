@@ -1,0 +1,36 @@
+---
+title: "Homework 1"
+format: html
+editor: visual
+---
+
+**I am a student at UMR**
+
+*John loves computers*
+
+~~I will watch the Superbowl~~
+
+y^2^
+
+r~5~
+
+## The Importance of Learning Quarto
+
+##### Daily Coding
+
+-   Goal 1
+    -   Subgoal 1
+    -   Subgoal 2
+    -   Subgoal 3
+-   Goal 2
+-   Goal 3
+-   Goal 4
+
+```{r}
+3+5
+```
+
+```{r}
+#| echo: FALSE
+7*15
+```

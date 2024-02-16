@@ -1,0 +1,144 @@
+---
+title: "Homework 2"
+format: html
+editor: visual
+---
+
+Problem 1 
+
+The random variable x is binomially-distributed having n = 5 trials and a probability of success p = 0.30. Find the following probabilities.
+
+The probability of x = 0 successes
+
+```{r}
+dbinom(0, 5, 0.3)
+```
+
+
+The probability of x = 1 success
+
+```{r}
+dbinom(1, 5, 0.3)
+```
+
+The probability of x = 2 successes
+
+```{r}
+dbinom(2, 5, 0.3)
+```
+
+The probability of x = 3 successes
+
+```{r}
+dbinom(3, 5, 0.3)
+```
+
+The probability of x = 4 successes
+
+```{r}
+dbinom(4, 5, 0.3)
+```
+
+The probability of x = 5 successes
+
+```{r}
+dbinom(5, 5, 0.3)
+```
+
+Confirm that the probability of 5 or fewer successes is 1. Use three different
+approaches.
+
+```{r}
+sum(dbinom(0:5, 5, 0.3))
+```
+```{r}
+dbinom(0, 5, 0.3) + dbinom(1, 5, 0.3) + dbinom(2, 5, 0.3) + dbinom(3, 5, 0.3) + dbinom(4, 5, 0.3) + dbinom(5, 5, 0.3)
+```
+
+```{r}
+0.16807+0.36015+0.3087+0.1323+0.02835+0.00243
+```
+
+Problem 2
+
+North American Airlines (NAA) strictly enforces the baggage weight limit placed on its passengers. Any passenger whose baggage exceeds the weight limit must pay a certain amount per kilogram over that limit. In a recent survey, NAA determined that 20% of its passengers have overweight baggage to check.
+
+
+Of the next 20 passengers checking in at the NAA ticket counter, what is the probability that exactly four will have overweight baggage?
+
+```{r}
+dbinom(4, 20, 0.2)
+```
+
+
+Of the next 20 passengers checking in at the NAA ticket counter, what is the probability that exactly four will have overweight baggage?
+
+```{r}
+dbinom(4, 20, 0.2)
+```
+
+
+What is the probability that more than three will have overweight baggage?
+
+```{r}
+sum(dbinom(0:3, 20, 0.2))
+```
+
+Problem 3
+
+Let x be a Poisson-distributed random variable. Answer the following questions.
+
+When the expected value of the Poisson probability distribution is 1, what is the probability that x will be less than or equal to 2?
+
+```{r}
+sum(dpois(0:2, 1))
+```
+
+
+When the expected value of the Poisson probability distribution is 2, what is the probability that x will be less than or equal to 2?
+
+```{r}
+sum(dpois(0:2, 2))
+```
+
+
+When the expected value of the Poisson probability distribution is 3, what is the probability that x will be less than or equal to 2?
+```{r}
+sum(dpois(0:2, 3))
+```
+
+Problem 4
+
+A major metropolitan hospital requested 25 emergency room personnel—14 paramedics and 
+    11 physicians—to report to work during one of the worst periods of the COVID-19 pandemic.   
+     However, because of the restrictions imposed by local authorities on the use of public 
+     transportation during this time, five staff members were unable to get from their homes to the 
+     hospital in a timely manner.
+
+What is the probability that two of the absent staff were physicians?
+
+```{r}
+dhyper(2, 11, 14, 5)
+```
+
+
+What is the probability that two of the absent staff were paramedics?
+
+```{r}
+dhyper(2, 14, 11, 5)
+```
+
+
+What is the probability that all the absent staff were paramedics?
+
+```{r}
+dhyper(5, 14, 11, 5)
+```
+
+
+What is the probability that none of the absent staff was a paramedic?
+
+```{r}
+dhyper(0, 14, 11, 5)
+```
+

@@ -1,0 +1,187 @@
+---
+title: "Homework 3"
+format: html
+editor: visual
+---
+
+# Problem 1
+
+Let x be the random variable described by the uniform probability distribution with its lower bound at a = −10, upper bound at b = 15.
+
+What is the probability density function, f(x)?
+
+$$ \mu = \frac{a+b}{2} = \frac{-10+15}{2} = 2.5 $$
+
+What is E(x) and σ?
+
+E(x) is the mean which is 2.5
+
+σ is the standard deviation which is $$ \sigma = \sqrt{\frac{b-a^2}{12}} = \sqrt{\frac{(15+10)^2}{12}} = 50.0833 $$
+
+
+# Problem 2
+
+Referring to the previous exercise, find the following probabilities using the probability 
+      density function f(x) and R.
+
+p(5 < x < 10)
+
+```{r}
+punif(10, -10, 15) - punif(5, -10, 15)
+```
+
+
+p(-5 < x < 0)
+
+```{r}
+punif(0, -10, 15) - punif(-5, -10, 15)
+```
+
+
+p(-5 < x < 5)
+
+```{r}
+punif(5, -10, 15) - punif(-5, -10, 15)
+```
+
+
+p(-8 < x < -5)
+
+```{r}
+punif(-5, -10, 15) - punif(-8, -10, 15)
+```
+
+
+p(x > 10)
+
+```{r}
+(punif(10, -10, 15, lower.tail = FALSE))
+```
+
+# Problem 3
+
+3. Let z be the standard normal variable. Use R to answer the following questions.
+
+p(−2  ≤  z  ≤  0.05)
+
+```{r}
+pnorm(0.05) - pnorm(-2)
+```
+
+
+p(−1.5  ≤  z  ≤  1.15)
+
+```{r}
+pnorm(1.15) - pnorm(-1.5)
+```
+
+
+p(−0.95  ≤  z  ≤  1.96)
+
+```{r}
+pnorm(1.96) - pnorm(-0.95)
+```
+
+
+p(−0.10  ≤  z  ≤  2.33)
+
+```{r}
+pnorm(2.33) - pnorm(-0.10)
+```
+
+# Problem 4
+
+4. Use R to answer the following questions about z.
+
+If the area to the left of z is 0.10, what is z?
+
+```{r}
+qnorm(0.10)
+```
+
+
+If the area to the left of z is 0.05, what is z?
+
+```{r}
+qnorm(0.05)
+```
+
+
+If the area to the left of z is 0.025, what is z?
+
+```{r}
+qnorm(0.025)
+```
+
+
+If the area to the right of z is 0.90, what is z?
+
+```{r}
+qnorm(0.90, lower.tail = FALSE)
+```
+
+
+If the area to the right of z is 0.95, what is z?
+
+```{r}
+qnorm(0.95, lower.tail = FALSE)
+```
+
+# Problem 5
+
+
+5. If x is a normally-distributed random variable with a mean μ = −91 and standard deviation 
+    σ = 6.5, answer the following questions.
+
+What is the probability that x will be greater than -104?
+
+```{r}
+pnorm(-104, -91, 6.5, lower.tail = FALSE)
+```
+
+
+What is the probability that x will be greater than -95?
+
+```{r}
+pnorm(-95, -91, 6.5, lower.tail = FALSE)
+```
+
+
+What is the probability that x will be greater than -85?
+
+```{r}
+pnorm(-85, -91, 6.5, lower.tail = FALSE)
+```
+
+
+What is the probability that x will be less than than -80?
+
+```{r}
+pnorm(-80, -91, 6.5)
+```
+
+
+What is the probability that x will be between -100 and -70?
+
+```{r}
+pnorm(-70, -91, 6.5) - pnorm(-100, -91, 6.5)
+```
+
+# Problem 6
+
+6. A random variable is exponentially-distributed with a mean of μ = 15.
+
+What is the form of the probability density function?
+
+$$f(x)=\frac{1}{15}e^{-\frac{x}{15}}$$
+
+What is the cumulative probability function?
+
+$$p(x \leq x_0)=1-e^{-\frac{x_0}{15}}$$
+
+Find p(x ≤ 3)
+
+```{r}
+pexp(3, 1/15)
+```
+
